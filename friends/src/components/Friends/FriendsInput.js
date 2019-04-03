@@ -15,8 +15,8 @@ class FriendsInput extends React.Component {
       [type]: o.target.value
     });
   };
-  onAddNewFriend = o => {
-    o.preventDefault();
+  onAddNewFriend = event => {
+    event.preventDefault();
     if (!this.state.name || !this.state.age || !this.state.email) {
       alert("Please fill out all fields");
       return;
@@ -45,19 +45,19 @@ class FriendsInput extends React.Component {
           type="text"
           placeholder="Name"
           value={this.state.name}
-          onChange={o => this.onInputChange(o, "name")}
+          onChange={event => this.onInputChange(event, "name")}
         />
         <input
           type="number"
           placeholder="Age"
           value={this.state.age}
-          onChange={o => this.onInputChange(o, "age")}
+          onChange={event => this.onInputChange(event, "age")}
         />
         <input
           type="text"
           placeholder="Email"
           value={this.state.email}
-          onChange={o => this.onInputChange(o, "email")}
+          onChange={event => this.onInputChange(event, "email")}
         />
         <button type="submit">Add Friend</button>
       </form>
