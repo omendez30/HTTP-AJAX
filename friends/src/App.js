@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Friends from "./components/Friends/Friends";
+import FriendsInput from "./components/Friends/FriendsInput";
 import "./App.css";
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <Friends friends={this.state.friends} />
+        <FriendsInput updateList={this.handleUpdateList} />
       </div>
     );
   }

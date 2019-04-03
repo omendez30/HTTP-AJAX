@@ -1,4 +1,5 @@
 import React from "react";
+import FriendsInput from "./FriendsInput";
 
 const FriendsList = props => (
   <div className="list">
