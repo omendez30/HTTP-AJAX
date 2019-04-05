@@ -53,7 +53,12 @@ class App extends Component {
             />
           )}
         />
-        <FriendsInput updateList={this.handleUpdateList} />
+        <Route
+          path="/"
+          render={props => (
+            <FriendsInput {...props} updateList={this.handleUpdateList} />
+          )}
+        />
       </div>
     );
   }

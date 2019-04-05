@@ -13,6 +13,7 @@ const FriendsInputSector = styled.input`
   margin: 10px 0;
   width: 30%;
   padding: 10px;
+  border: 1px solid black;
 `;
 
 const SubmitBtn = styled.button`
