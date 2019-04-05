@@ -1,6 +1,35 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
 
+const FriendsInputForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`;
+const FriendsInputSector = styled.input`
+  display: flex;
+  margin: 10px 0;
+  width: 30%;
+  padding: 10px;
+`;
+
+const SubmitBtn = styled.button`
+  width: 25%;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  background: #ffa482;
+  cursor: cell;
+
+  &:hover {
+    color: #ffa482;
+    background: #fff;
+  }
+`;
 class FriendsInput extends React.Component {
   constructor(props) {
     super(props);
@@ -40,27 +69,27 @@ class FriendsInput extends React.Component {
   };
   render() {
     return (
-      <form onSubmit={this.onAddNewFriend}>
-        <input
+      <FriendsInputForm onSubmit={this.onAddNewFriend}>
+        <FriendsInputSector
           type="text"
           placeholder="Name"
           value={this.state.name}
           onChange={event => this.onInputChange(event, "name")}
         />
-        <input
+        <FriendsInputSector
           type="number"
           placeholder="Age"
           value={this.state.age}
           onChange={event => this.onInputChange(event, "age")}
         />
-        <input
+        <FriendsInputSector
           type="text"
           placeholder="Email"
           value={this.state.email}
           onChange={event => this.onInputChange(event, "email")}
         />
-        <button type="submit">Add Friend</button>
-      </form>
+        <SubmitBtn type="submit">Add Friend</SubmitBtn>
+      </FriendsInputForm>
     );
   }
 }
