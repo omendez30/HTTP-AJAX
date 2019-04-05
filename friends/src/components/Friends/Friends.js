@@ -31,6 +31,10 @@ const Friends = props => {
         <span>Email:</span>
         {friend.email}
       </p>
+      <span
+          className="fas fa-trash-alt"
+          onClick={() => props.deleteFriend(friend.id)}
+        />
     </div>
   ));
   return <FriendListDiv>{friendArr}</FriendListDiv>;
