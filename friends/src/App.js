@@ -42,9 +42,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Friends
-          friends={this.state.friends}
-          deleteFriend={this.handleDeleteFriend}
+        <Route
+          exact
+          path="/"
+          render={props => (
+            <Friends
+              {...props}
+              friends={this.state.friends}
+              deleteFriend={this.handleDeleteFriend}
+            />
+          )}
         />
         <FriendsInput updateList={this.handleUpdateList} />
       </div>
